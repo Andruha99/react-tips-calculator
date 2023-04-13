@@ -1,4 +1,4 @@
-export interface OptionProp {
-    value: string;
-    label: string;
+export type OptionProp = {
+    readonly value: number;
+    readonly label: string;
 }

@@ -6,12 +6,10 @@ const StyledForm = styled.form`
     width: 100%;
     max-width: 456px;
     margin: 0px auto;
-    margin-top: 203px;
     text-align: center;
 
     @media (max-width: 745px) {
         width: 331px;
-        margin-top: 236px;
     }
 `;
 

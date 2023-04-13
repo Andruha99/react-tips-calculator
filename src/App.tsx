@@ -1,10 +1,10 @@
-import React from 'react' 
 import { Form } from './components/Form/Form'
+import { Wrapper } from './ui/Base'
 
 export const App = () => {
   return (
-    <div>
+    <Wrapper>
       <Form />
-    </div>
+    </Wrapper>
   )
 }

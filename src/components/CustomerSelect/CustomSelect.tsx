@@ -4,13 +4,24 @@ import { OptionProp } from '../../types/types'
 import { StyledSelect } from './styles';
 
 interface CustomSelectProp {
+  currentOption: OptionProp;
   options: OptionProp[];
-  tips: OptionProp;
-  handleTipsSelect: (option: SingleValue<OptionProp>) => void;
+  setTips: (value: OptionProp) => void;
 }
 
-export const CustomSelect = ({options, tips, handleTipsSelect}: CustomSelectProp) => {
+export const CustomSelect = ({currentOption, options, setTips}: CustomSelectProp) => {
+  const handleChange = (option: SingleValue<typeof currentOption>) => {
+    if (option) setTips(option);
+  };
+
   return (
-    <Select options = {options} defaultValue = {tips} onChange = {handleTipsSelect} styles = {StyledSelect}/>
+    <Select 
+      options={options} 
+      isMulti={false}
+      styles={StyledSelect}
+      isSearchable={false}
+      value={currentOption}
+      onChange={handleChange}
+      />
   )
 }
